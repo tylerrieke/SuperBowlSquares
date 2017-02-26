@@ -1,0 +1,69 @@
+.squares-container {
+    line-height: initial;
+}
+
+.teamX {
+    transform: rotate(-90deg);
+    font-size: 70px;
+    margin-top: 400px;
+    float: left;
+    margin-right: -70px;
+    margin-left: -70px;
+}
+
+.teamY {
+    text-align: center;
+    font-size: 70px;
+}
+
+.squares-section {
+    background: none repeat scroll 0 0 #f3df8d;
+    border: 1px double;
+    border-radius: 10px;
+    border-collapse: initial;
+    padding: 10px;
+}
+
+.square-row {
+    margin-left: -15px;
+    padding-bottom: 5px;
+}
+
+.square {
+    color: black;
+    text-align: center;
+    border: medium solid black;
+    width: 120px;
+    line-height: 1;
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    font-size: 36px;
+}
+
+.square-lg {
+    font-size: 24px;
+}
+
+.square-xl {
+    font-size: 18px;
+}
+
+.square-filled {
+    background:#dfa757
+}
+
+.player-registration-row {
+    border: white solid;
+    border-radius: 10px;
+    margin-left: 0px;
+    font-size: 50px;
+    background: lightgrey;
+}
+
+.player-display {
+
+}
+
+.player-name {
+
+}
+

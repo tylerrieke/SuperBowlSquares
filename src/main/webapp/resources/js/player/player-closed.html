@@ -1,0 +1,16 @@
+<span id="site" class="ng-cloak">
+    <div class="container">
+        <container>
+            <table class="squares-section">
+                <tr class="row square-row ">
+                    <td class="square"><div>{{teamX}}<div></div></td>
+                    <td class="square"><div>{{teamY}}</div></td>
+                </tr>
+                <tr class="row square-row " ng-repeat="square in squares">
+                    <td class="square"><div>{{square.x}}</div></td>
+                    <td class="square"><div>{{square.y}}</div></td>
+                </tr>
+            </table>
+        </container>
+    </div>
+</span>

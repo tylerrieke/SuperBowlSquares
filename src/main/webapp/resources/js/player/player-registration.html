@@ -1,0 +1,14 @@
+<span id="site" class="ng-cloak">
+    <div class="container player-details-container">
+        <container>
+            <form class="player-details-text">
+                <b>Name:</b>    <input ng-class="{'player-details-text':true,'player-name-field':true,'field-editing':nameEditing==true}"type="text" ng-model="name" ng-focus="setEditing('name')" ng-blur="updatePlayer('name')" ng-enter="doBlur($event)" ng-maxlength="maxNameLength">
+                &nbsp<div class="player-field-error" ng-show="showNameLengthError()">Must be between 1 and 20 characters</div>
+            </form>
+            <form class="player-details-text">
+                <b>Display:</b> <input ng-class="{'player-details-text':true,'player-display-field':true,'field-editing':displayEditing==true}" type="text" ng-model="display" ng-focus="setEditing('display')" ng-blur="updatePlayer('display')" ng-enter="doBlur($event)" ng-maxlength="maxDisplayLength">
+                &nbsp<div class="player-field-error" ng-show="showDisplayLengthError()">Must be between 2 and 4 characters</div>
+            </form>
+        </container>
+    </div>
+</span>

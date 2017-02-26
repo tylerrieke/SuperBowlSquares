@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+
+    <bean id="connectionFactory" class="com.rieke.bmore.squares.connection.ConnectionFactory"
+          scope="singleton">
+    </bean>
+
+    <bean id="playerFactory" class="com.rieke.bmore.squares.player.PlayerFactory"
+          scope="singleton">
+        <constructor-arg index="0" ref="connectionFactory"/>
+    </bean>
+
+    <bean id="playerService" class="com.rieke.bmore.squares.player.PlayerService"
+          scope="singleton">
+        <constructor-arg index="0" ref="playerFactory"/>
+        <constructor-arg index="1" ref="connectionFactory"/>
+    </bean>
+
+    <bean id="adminService" class="com.rieke.bmore.squares.admin.AdminService"
+          scope="singleton">
+        <constructor-arg index="0" ref="playerService"/>
+    </bean>
+
+    <bean id="superBowlSquares" class="com.rieke.bmore.squares.SuperBowlSquares"
+          scope="singleton">
+        <constructor-arg index="0" ref="adminService"/>
+        <constructor-arg index="1" ref="playerService"/>
+    </bean>
+
+</beans>

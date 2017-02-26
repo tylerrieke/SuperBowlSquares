@@ -1,0 +1,45 @@
+<span id="site" class="ng-cloak">
+    <div class="container squares-container">
+        <row>
+            <container>
+                <div class="teamX">
+                    {{teamX.name}}
+                </div>
+            </container>
+            <container>
+                <div class="teamY">
+                    {{teamY.name}}
+                </div>
+                <row>
+                    <table class="squares-section">
+                        <tr class="row square-row ">
+                            <td class="square">
+                                <div> </div>
+                            </td>
+                            <td class="square" ng-repeat="num in [0,1,2,3,4,5,6,7,8,9]">
+                                <div><b>{{num}}</b></div>
+                            </td>
+                        </tr>
+                        <tr class="row square-row " ng-repeat="row in squares">
+                            <td class="square">
+                                <div><b>{{$index}}</b></div>
+                            </td>
+                            <td ng-class="{'square':true,'square-filled':!!square.displayName, 'square-lg':!!square.displayName&&square.displayName.length==3,'square-xl':!!square.displayName&&square.displayName.length==4}" ng-repeat="square in row track by $index">
+                                <div ng-show="square.displayName">{{square.displayName}}</div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="player-section">
+                        <div ng-class="{'row':true,'player-row':true,'picking':player.active==true}" ng-repeat="player in players">
+                            <row>
+                                <div class="span2 player-display">{{player.display}}</div>
+                                <div class="span7 player-name">{{player.name}}</div>
+                            </row>
+                        </div>
+                    </div>
+                </row>
+            </container>
+        </row>
+
+    </div>
+</span>

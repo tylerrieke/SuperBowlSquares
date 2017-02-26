@@ -1,0 +1,14 @@
+<span id="site" class="ng-cloak">
+    <div class="container squares-container">
+        <container>
+            <div class="player-section">
+                <div ng-class="{'row':true,'player-registration-row':true}" ng-repeat="player in players">
+                    <row>
+                        <div class="span3 player-display">{{player.display}}</div>
+                        <div class="span7 player-name">{{player.name}}</div>
+                    </row>
+                </div>
+            </div>
+        </container>
+    </div>
+</span>

@@ -1,0 +1,46 @@
+<span id="site" class="ng-cloak">
+    <div ng-class="{'picking': isPicking()}">
+        <container>
+            <table>
+                <tr>
+                    <td class="team-cell">
+                        <b>{{teamX.name}}</b>
+                    </td>
+                    <td class="team-cell">
+                        <b>{{teamY.name}}</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="dropdown team-cell">
+                        <button class="btn btn-default dropdown-toggle team-menu-selected" type="button" id="homeDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            {{homeScore}}
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="homeDropDown">
+                            <li class="team-menu-option" ng-repeat="x in homeScores"><a ng-click="homeScoreSelected(x)">{{x}}</a></li>
+                        </ul>
+                    </td>
+                    <td class="dropdown team-cell">
+                        <button class="btn btn-default dropdown-toggle team-menu-selected" type="button" id="awayDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            {{awayScore}}
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="awayDropDown">
+                            <li class="team-menu-option" ng-repeat="y in awayScores"><a ng-click="awayScoreSelected(y)">{{y}}</a></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <div class="player-field-error" ng-show="!!errorMessage">{{errorMessage}}</div>
+            <button type="button" ng-show="isPicking()" ng-click="makeMark()" class="btn btn-medium btn-danger mark-button">
+                Mark
+            </button>
+            <br>
+            <br>
+            <br>
+            <button type="button" ng-show="isPicking()" ng-click="skip()" class="btn btn-medium btn-danger pass-button">
+                PASS
+            </button>
+        </container>
+    </div>
+</span>

@@ -1,0 +1,20 @@
+<span id="site" class="ng-cloak">
+    <div class="container container-navbar-pad">
+        <container>
+            <div class="player-section">
+                <div ng-class="{'row':true,'player-row':true,'picking':player.active==true}" ng-repeat="player in players">
+                    <row>
+                        <div class="span2 player-display">{{player.display}}</div>
+                        <div class="span7 player-name">{{player.name}}</div>
+                        <button type="button" ng-click="setBlacklisted(player)" class="btn btn-medium btn-danger">
+                            X
+                        </button>
+                    </row>
+                </div>
+            </div>
+        </container>
+        <button type="button" ng-click="startPicking()" class="btn btn-medium btn-danger">
+            Start Picking
+        </button>
+    </div>
+</span>
